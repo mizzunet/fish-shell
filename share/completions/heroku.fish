@@ -63,6 +63,7 @@ complete $heroku_looking -xa sharing -d 'manage collaborators on an app'
 
 # Additional topics:
 
+complete $heroku_looking -xa buildpacks -d 'scripts used to compile apps'
 complete $heroku_looking -xa certs -d 'manage ssl endpoints for an app'
 complete $heroku_looking -xa drains -d 'display syslog drains for an app'
 complete $heroku_looking -xa features -d 'manage optional features'
@@ -78,10 +79,11 @@ complete $heroku_looking -xa plugins -d 'manage plugins to the heroku gem'
 complete $heroku_looking -xa regions -d 'list available regions'
 complete $heroku_looking -xa stack -d 'manage the stack for an app'
 complete $heroku_looking -xa status -d 'check status of heroku platform'
+complete $heroku_looking -xa twofactor
 complete $heroku_looking -xa update -d 'update the heroku client'
 complete $heroku_looking -xa version -d 'display version'
 
-complete $heroku_looking -xa git:clone -d "clones heroku application to machine at DIRECTORY. defaults to app name."
+complete $heroku_looking -xa git:clone -d "APP DIRECTORY clones a heroku app to your local machine at DIRECTORY (defaults to app name)"
 complete $heroku_looking -xa git:remote -d "adds a git remote to an app repo (-a APP)"
 
 # Addons subcommands
@@ -141,6 +143,14 @@ complete $heroku_looking -xa auth:logout -d "clear local authentication credenti
 complete $heroku_looking -xa auth:token -d "display your api token"
 complete $heroku_looking -xa auth:whoami -d "display your heroku email address"
 
+# Buildpack subcommands
+complete $heroku_looking -xa buildpacks:add -d "add new app buildpack, inserting into list of buildpacks if necessary"
+complete $heroku_looking -xa buildpacks:clear -d "clear all buildpacks set on the app"
+complete $heroku_looking -xa buildpacks:info -d "fetch info about a buildpack"
+complete $heroku_looking -xa buildpacks:remove -d "remove a buildpack set on the app"
+complete $heroku_looking -xa buildpacks:search -d "search for buildpacks"
+complete $heroku_looking -xa buildpacks:set 
+complete $heroku_looking -xa buildpacks:versions -d "list versions of a buildpack"
 
 # Config options and subcommands
 complete -c heroku -n '__fish_heroku_using_command config' -s s -l shell -d "output config vars in shell format"
